@@ -9,7 +9,7 @@ public class PourDetector : MonoBehaviour
     public GameObject streamPrefab = null;
 
     private bool isPouring = false;
-    private Stream currentSteam = null;
+    private Stream currentStream = null;
 
     private void Update()
     {
@@ -34,16 +34,21 @@ public class PourDetector : MonoBehaviour
     private void StartPour()
     {
         print("Start");
+        currentStream = CreateStream();
+        currentStream.Begin();
     }
 
     private void EndPour()
     {
         print("End");
+        currentStream.End();
+        currentStream = null;
+
     }
 
     private float CalculatePourAngle()
     {
-        return transform.forward.y = Mathf.Rad2Deg;
+        return transform.forward.y * Mathf.Rad2Deg;
     }
 
     private Stream CreateStream()

@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class StoveManager : MonoBehaviour
 {
+    public GameObject gasStove;
+    public GameObject potWater;
+    public ParticleSystem smokeEffect;
+    public ParticleSystem fireEffect;
 
-    public GameObject fireEffect;
-    public GameObject smokeEffect;
-    public AudioSource fireSound;
+    private float timer = 0.0f;
+    private bool isSmoking = false;
+    private bool isOnFire = false;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-
+        
     }
+
+    private void Update()
+    {
+        
+    }
+
+
 }
