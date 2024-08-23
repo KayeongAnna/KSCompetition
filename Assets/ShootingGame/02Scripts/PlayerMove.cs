@@ -4,8 +4,16 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    // 플레이어가 이동할 속력
+    public float speed = 5;
+
     void Update()
     {
-        transform.Translate(Vector3.right * 5 * Time.deltaTime);
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        Vector3 dir = new Vector3(h, v, 0);
+
+        transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 }
